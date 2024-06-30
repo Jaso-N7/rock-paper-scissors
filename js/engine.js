@@ -11,7 +11,7 @@ console.log("Ready Player One")
 
 // getComputerChoice : Choice
 // Randomly returns "rock", "paper", or "scissors"
-let getComputerChoice = () => {
+const getComputerChoice = () => {
     
     const signal = (Math.random() * 10)
 
@@ -23,4 +23,19 @@ let getComputerChoice = () => {
 	return "scissors"
     }
 	
+}
+
+// getHumanChoice : Choice
+// Returns one of the valid choices based on the user input
+const getHumanChoice = () => {
+
+    const handSignal = prompt("Rock, Paper, or Scissors?").toLowerCase()
+
+    if (handSignal === "rock" || handSignal === "paper" ||
+	handSignal === "paper") {
+	return handSignal
+    } else {
+	alert("Bad sign, go again")
+	getHumanChoice()
+    }
 }
