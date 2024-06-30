@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
 - Declare the players score variables
 
 ## [0.3.0]
+
+### Added
 
 - Game logic for players to compete with the computer.
 
