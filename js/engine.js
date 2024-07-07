@@ -1,3 +1,5 @@
+let humanScore = 0, computerScore = 0
+
 console.log("Ready Player One")
 
 /*
