@@ -67,18 +67,19 @@ function playRound(humanChoice, computerChoice) {
 	cc = convertChoice(computerChoice)
     }
 
-    let scores = `Score: Player(${humanScore}) | Computer(${computerScore})` 
     if (hc > cc) {
-	humanScore += 1
-	console.log( `You win! ${humanChoice} beats ${computerChoice}
-	${scores}` )
+	++humanScore
+	console.log( `You win! ${humanChoice} beats ${computerChoice}` )
+	console.log( `Score: Player(${humanScore}) | Computer(${computerScore})` )
     } else if (cc > hc) {
-	computerScore += 1
-	console.log( `You lose! ${computerChoice} beats ${humanChoice}
-	${scores}` )
+	++computerScore
+	console.log( `You lose! ${computerChoice} beats ${humanChoice}` )
+	console.log( `Score: Player(${humanScore}) | Computer(${computerScore})` )
     } else {
-	console.log( `Tied! ${humanChoice} and ${computerChoice}
-	${scores}` )
+	++humanScore
+	++computerScore
+	console.log( `Tied! ${humanChoice} and ${computerChoice}` )
+	console.log( `Score: Player(${humanScore}) | Computer(${computerScore})` )
     }
 
 }
@@ -97,15 +98,15 @@ function playGame() {
 
 	keepPlaying = ++gameCounter < 5
 
-    } while( keepPlaying )
+    } while( keepPlaying );
 
-	if (humanScore > computerScore) {
-	    console.log( "Congrats, you won!" )
-	} else if (humanScore < computerScore){
-	    console.log( "Sorry, 'puter won this time!" )
-	} else {
-	    console.log( "It's a tie, try again?" )
-	}
+    if (humanScore > computerScore) {
+	console.log( "Congrats, you won!" )
+    } else if (humanScore < computerScore){
+	console.log( "Sorry, 'puter won this time!" )
+    } else {
+	console.log( "It's a tie, try again?" )
+    }
 
 }
 
