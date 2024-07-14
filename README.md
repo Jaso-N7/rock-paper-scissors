@@ -21,7 +21,7 @@ git clone https://github.com/Jaso-N7/odin-landing-page.git
 ## Usage
 
 1. Open the HTML file `index.html` with your browser.
-2. Open the JS console ( F12, Ctrl+Shift+J or CMD+Shift+J )
+2. Open the JS console ( F12, Ctrl+Shift+J or CMD+Option+J )
 3. Follow the instructions given.
 
 ## Configuration
