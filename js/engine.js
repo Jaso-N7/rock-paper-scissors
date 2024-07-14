@@ -1,6 +1,6 @@
-let humanScore = 0, computerScore = 0
-
 console.log("Ready Player One")
+
+let humanScore = 0, computerScore = 0
 
 /*
    A Choice is one of:
@@ -52,8 +52,7 @@ function convertChoice (c) {
 // winner of the round via a string message.
 function playRound(humanChoice, computerChoice) {
 
-    let hc = 0
-    let cc = 0
+    let hc = 0, cc = 0
     
     if (computerChoice === "scissors" &&
 	humanChoice === "rock") {
@@ -68,19 +67,46 @@ function playRound(humanChoice, computerChoice) {
 	cc = convertChoice(computerChoice)
     }
 
+    let scores = `Score: Player(${humanScore}) | Computer(${computerScore})` 
     if (hc > cc) {
 	humanScore += 1
-	console.log( `You win! ${humanChoice} beats ${computerChoice}` )
+	console.log( `You win! ${humanChoice} beats ${computerChoice}
+	${scores}` )
     } else if (cc > hc) {
 	computerScore += 1
-	console.log( `You lose! ${computerChoice} beats ${humanChoice}` )
+	console.log( `You lose! ${computerChoice} beats ${humanChoice}
+	${scores}` )
     } else {
-	console.log( `Tied! ${humanChoice} and ${computerChoice}` )
+	console.log( `Tied! ${humanChoice} and ${computerChoice}
+	${scores}` )
     }
 
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+// playGame : IO
+// Plays a game of five(5) rounds, keeps track of the score and declares a winner.
+function playGame() {
 
-playRound( humanSelection, computerSelection )
+    let gameCounter = 0, keepPlaying = true
+
+    do {
+
+	const humanSelection = getHumanChoice()
+	const computerSelection = getComputerChoice()	
+	playRound( humanSelection, computerSelection )
+
+	keepPlaying = ++gameCounter < 5
+
+    } while( keepPlaying )
+
+	if (humanScore > computerScore) {
+	    console.log( "Congrats, you won!" )
+	} else if (humanScore < computerScore){
+	    console.log( "Sorry, 'puter won this time!" )
+	} else {
+	    console.log( "It's a tie, try again?" )
+	}
+
+}
+
+playGame()
